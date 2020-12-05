@@ -4,5 +4,7 @@ module.exports = {
     plugins: ["stylelint-scss"],
     rules: {
         "declaration-no-important": true,
+        "at-rule-no-unknown": null,
+        "scss/at-rule-no-unknown": true,
     },
 };
