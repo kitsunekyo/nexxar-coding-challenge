@@ -4,8 +4,8 @@
     "description": "Dear applicant, welcome to the nexxar challenge!",
     "main": "index.js",
     "scripts": {
-        "scss": "node-sass src/scss/style.scss -o dist",
-        "start": "npm run scss && node-sass src/scss/style.scss -wo dist"
+        "build": "gulp build",
+        "start": "gulp dev"
     },
     "author": "",
     "license": "ISC",
