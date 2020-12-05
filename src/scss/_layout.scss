@@ -2,8 +2,12 @@
 
 .container {
     max-width: 1080px;
-    padding: 0 1rem;
+    padding: 0 $space;
     margin: 0 auto;
+
+    @media (min-width: 768px) {
+        padding: 0 $space-tablet;
+    }
 }
 
 .main {
@@ -25,7 +29,7 @@
 }
 
 section[class*="section"]:not(:last-child) {
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 }
 
 .text-section {
@@ -33,6 +37,10 @@ section[class*="section"]:not(:last-child) {
     font-size: 1.3rem;
     color: $color-k2;
     font-weight: 300;
+
+    @media (min-width: 768px) {
+        font-size: 1.5rem;
+    }
 }
 
 .flex-section {
@@ -40,10 +48,10 @@ section[class*="section"]:not(:last-child) {
         margin-bottom: 3rem;
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 1080px) {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 1rem;
+        gap: $space;
 
         > *:not(:last-child) {
             margin-bottom: 0;

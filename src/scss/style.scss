@@ -34,12 +34,22 @@ a {
 @for $i from 1 through 4 {
     h#{$i}.title {
         margin-top: 1rem;
-        font-size: 1.75rem;
         margin-bottom: 1rem;
+        font-size: 1.75rem;
     }
 }
 
 @media (min-width: 768px) {
+    h1.title {
+        font-size: 3.5rem;
+    }
+    h3.title {
+        font-size: 2rem;
+        margin-top: 0;
+    }
+}
+
+@media (min-width: 1080px) {
     h1.title {
         font-size: 4rem;
     }
@@ -51,11 +61,35 @@ a {
 .card {
     box-shadow: 0 10px 4px rgba(0, 0, 0, 0.05), 0 0 6px 3px rgba(0, 0, 0, 0.05);
     padding: 1rem;
+
+    @media (min-width: 768px) {
+        padding: 2rem;
+    }
 }
 
 .graph {
+    @media (min-width: 768px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__chart {
+        width: 100%;
+
+        @media (min-width: 768px) {
+            max-width: 300px;
+            margin-right: 2rem;
+        }
+    }
+
     &__caption {
         font-weight: 600;
+
+        @media (min-width: 768px) {
+            margin-top: 1rem;
+            max-width: 400px;
+        }
     }
 
     &__legend {
@@ -94,8 +128,14 @@ a {
         &:not(:last-child) {
             margin-bottom: 2rem;
         }
+
+        @media (min-width: 768px) {
+            font-size: 2rem;
+        }
     }
     figcaption {
+        font-size: 1.25rem;
+        
         > span {
             display: inline-block;
             font-weight: 700;

@@ -1,16 +1,31 @@
+@import 'var';
+
 .footer {
     margin-top: auto;
     display: flex;
-    padding: 1rem;
+    padding: $space;
     justify-content: center;
+
+     @media (min-width: 768px) {
+         padding: $space $space-tablet;
+         justify-content: flex-start;
+     }
 
     &__brand {
         display: none;
+
+        @media (min-width: 768px) {
+            display: block;
+        }
     }
 
     &__social {
         display: flex;
         align-items: center;
+
+        @media (min-width: 768px) {
+            margin-left: auto;
+        }
 
         &-icon {
             width: 30px;

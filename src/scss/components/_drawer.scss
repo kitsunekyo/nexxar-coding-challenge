@@ -6,6 +6,10 @@
     top: 60px;
     left: 0;
     background-color: $color-k5;
+
+    @media (min-width: 768px) {
+        padding: 0 4rem 1rem;
+    }
 }
 
 .nav-button {
