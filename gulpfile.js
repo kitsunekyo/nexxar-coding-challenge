@@ -1,5 +1,5 @@
 const path = require("path");
-const { watch, src, dest } = require("gulp");
+const { watch, src, dest, parallel } = require("gulp");
 const sass = require("gulp-sass");
 const browserSync = require("browser-sync").create();
 sass.compiler = require("node-sass");
@@ -14,29 +14,40 @@ function scss() {
         .pipe(browserSync.stream());
 }
 
-function dev() {
-    browserSync.init({
-        server: {
-            baseDir: "./public",
-        },
-    });
-
-    watchScss()
-    watchHtml();
+function javascript() {
+    return src('./src/*.js')
+        .pipe(dest(output))
+        .pipe(browserSync.stream());
 }
 
 function watchScss() {
+    scss();
     return watch('./src/**/*.scss', scss);
+}
+
+function watchJavascript() {
+    javascript();
+    return watch('./src/**/*.js', javascript);
 }
 
 function watchHtml() {
     return watch('./public/*.html').on('change', browserSync.reload);
 }
 
-exports.default = function () {
-    return scss();
-};
+function dev(cb) {
+    browserSync.init({
+        server: {
+            baseDir: "./public",
+        },
+    });
 
-exports.dev = function () {
-    return dev();
-};
+    watchJavascript();
+    watchScss()
+    watchHtml();
+
+    cb();
+}
+
+exports.default = parallel(javascript, scss);
+exports.build = parallel(javascript, scss);
+exports.dev = dev;
