@@ -3,6 +3,7 @@
 .container {
     max-width: 1080px;
     padding: 0 1rem;
+    margin: 0 auto;
 }
 
 .main {
@@ -44,13 +45,13 @@
             place-content: center;
 
             &:not(:last-child) {
-                margin-right: .5rem;
+                margin-right: 0.5rem;
             }
         }
     }
 }
 
-section[class*='section']:not(:last-child) {
+section[class*="section"]:not(:last-child) {
     margin-bottom: 2rem;
 }
 
@@ -62,10 +63,57 @@ section[class*='section']:not(:last-child) {
 }
 
 .flex-section {
-    display: flex;
-    flex-direction: column;
-
     > *:not(:last-child) {
         margin-bottom: 1rem;
+    }
+
+    @media (min-width: 768px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+
+        > *:not(:last-child) {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.quote {
+    &__icon {
+        fill: $color-cta;
+        max-width: 40px;
+        height: auto;
+    }
+
+    blockquote {
+        font-size: 1.75rem;
+        color: $color-k2;
+
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+    }
+    figcaption {
+        > span {
+            display: inline-block;
+            font-weight: 700;
+            position: relative;
+            line-height: 1;
+
+            &::after {
+                content: "";
+                display: inline-block;
+                height: 2px;
+                width: 100%;
+                background: $color-k1;
+                line-height: 1;
+            }
+        }
+
+        > cite {
+            display: block;
+            text-decoration: none;
+            font-style: normal;
+        }
     }
 }
