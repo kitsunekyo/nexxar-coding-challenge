@@ -1,0 +1,15 @@
+<svg id="pie_graph" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="262" height="262" viewBox="0 0 262 262">
+  <defs>
+    <clipPath id="clip-path">
+      <circle id="Mask" cx="131" cy="131" r="131" fill="#70c1d4"/>
+    </clipPath>
+  </defs>
+  <g id="Rectangle">
+    <circle id="Mask-2" data-name="Mask" cx="131" cy="131" r="131" fill="#70c1d4"/>
+    <g id="Rectangle-2" data-name="Rectangle" clip-path="url(#clip-path)">
+      <path id="Rectangle-3" data-name="Rectangle" d="M0,0H210.861V286.966L0,163.225Z" transform="translate(131 -32.225)" fill="#e24242"/>
+      <path id="Rectangle-4" data-name="Rectangle" d="M122,0H279V175H0Z" transform="translate(8 132)" fill="#ae62a7"/>
+    </g>
+  </g>
+  <circle id="Oval" cx="90.5" cy="90.5" r="90.5" transform="translate(40 41)" fill="#fff"/>
+</svg>

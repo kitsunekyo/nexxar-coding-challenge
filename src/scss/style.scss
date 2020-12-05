@@ -1,14 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap");
-
 @import "./reset";
 @import "./var";
+@import "./layout";
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 
 html,
 body {
-    font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
         "Open Sans", "Helvetica Neue", sans-serif;
     font-size: 17px;
-    line-height: 1.3;
+    line-height: 1.5;
     color: $color-k1;
 }
 
@@ -17,6 +21,25 @@ button {
     border: 0;
     cursor: pointer;
     background-color: $color-k3;
+}
+
+@for $i from 1 through 4 {
+    h#{$i}.title {
+        margin-top: 1rem;
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.card {
+    box-shadow: 0 10px 4px rgba(0, 0, 0, 0.05), 0 0 6px 3px rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+}
+
+.graph {
+    &__caption {
+        font-weight: 600;
+    }
 }
 
 .nav-button {
