@@ -1,0 +1,26 @@
+.footer {
+    margin-top: auto;
+    display: flex;
+    padding: 1rem;
+
+    &__social {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+
+        &-icon {
+            width: 30px;
+            height: 30px;
+            background-color: $color-k3;
+            line-height: 1;
+            color: #fff;
+            border-radius: 50%;
+            display: grid;
+            place-content: center;
+
+            &:not(:last-child) {
+                margin-right: 0.5rem;
+            }
+        }
+    }
+}

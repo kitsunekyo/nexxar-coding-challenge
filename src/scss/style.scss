@@ -1,6 +1,10 @@
 @import "./reset";
 @import "./var";
 @import "./layout";
+@import "./footer";
+@import "./header";
+@import "./list";
+@import "./menu";
 
 * {
     -webkit-font-smoothing: antialiased;
@@ -9,8 +13,8 @@
 
 html,
 body {
-    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
-        "Open Sans", "Helvetica Neue", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+        "Helvetica Neue", sans-serif;
     font-size: 17px;
     line-height: 1.5;
     color: $color-k1;
@@ -21,6 +25,11 @@ button {
     border: 0;
     cursor: pointer;
     background-color: $color-k3;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
 @for $i from 1 through 4 {
@@ -51,129 +60,42 @@ button {
     }
 }
 
-.nav-button {
-    position: relative;
-    padding: 0;
-    height: 19px;
-    width: 27px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: transparent;
-
-    > span {
-        display: block;
-        top: 50%;
-        transform: translateY(-50%);
-        transition: top 0.1s ease-out;
-
-        &,
-        &::before,
-        &::after {
-            position: absolute;
-            width: 27px;
-            height: 3px;
-            background-color: $color-k4;
-        }
-
-        &::before,
-        &::after {
-            content: "";
-            display: block;
-        }
-
-        &::before {
-            top: -8px;
-        }
-
-        &::after {
-            bottom: -8px;
-        }
-    }
-}
-
-.nav-drawer {
-    width: 100%;
-    padding: 15px 15px 30px 15px;
-    display: none;
-}
-
-.header {
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
-    background-color: #fff;
-    transition: background-color 0.1s ease-out;
-
-    &__row {
-        height: 60px;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        padding: 1rem;
-    }
-
-    &__logo {
-        width: 89px;
+.quote {
+    &__icon {
+        fill: $color-cta;
+        max-width: 40px;
         height: auto;
-        flex-shrink: 0;
     }
 
-    &__title {
-        flex-grow: 1;
-        text-align: center;
-        margin-right: 1rem;
-        font-weight: 700;
-    }
+    blockquote {
+        font-size: 1.75rem;
+        color: $color-k2;
 
-    &--open {
-        background-color: $color-k5;
-
-        .nav-button {
-            span,
-            span::before,
-            span::after {
-                width: 17px;
-                background-color: $color-k1;
-                top: auto;
-                bottom: auto;
-            }
-        }
-        .nav-drawer {
-            display: block;
+        &:not(:last-child) {
+            margin-bottom: 2rem;
         }
     }
-}
-
-.nav-list {
-    display: flex;
-    flex-direction: column;
-
-    &__item {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 65px;
-        padding: 0 60px;
-        background-color: #fff;
-        cursor: pointer;
-        transition: background-color 0.1s ease-out, color 0.1s ease-out;
-
-        &::after {
-            content: url("/assets/chevron.svg");
+    figcaption {
+        > span {
             display: inline-block;
-            position: absolute;
-            right: 25px;
-            width: 9px;
-            height: 18px;
-        }
-
-        &:hover {
-            background-color: $color-cta;
-            color: #fff;
+            font-weight: 700;
+            position: relative;
+            line-height: 1;
 
             &::after {
-                color: #fff;
+                content: "";
+                display: inline-block;
+                height: 2px;
+                width: 100%;
+                background: $color-k1;
+                line-height: 1;
             }
+        }
+
+        > cite {
+            display: block;
+            text-decoration: none;
+            font-style: normal;
         }
     }
 }

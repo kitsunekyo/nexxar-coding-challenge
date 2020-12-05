@@ -1,0 +1,45 @@
+[data-menu-target] {
+    &::after,
+    &::before {
+        content: url("/assets/chevron.svg");
+        display: none;
+        position: absolute;
+        width: 9px;
+        height: 18px;
+    }
+
+    &::after {
+        right: 25px;
+    }
+
+    &::before {
+        left: 25px;
+        transform: rotate(180deg);
+    }
+}
+
+[data-menu-target="main"] {
+    background: transparent;
+    font-weight: 600;
+
+    &::before {
+        display: inline-block;
+    }
+}
+[data-menu-target="secondary"] {
+    &::after {
+        display: inline-block;
+    }
+}
+
+.menu {
+    display: block;
+
+    &-title {
+        font-weight: 600;
+    }
+}
+
+.menu--secondary {
+    display: none;
+}

@@ -1,0 +1,25 @@
+.list {
+    display: flex;
+    flex-direction: column;
+
+    &-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 65px;
+        padding: 0 60px;
+        background-color: #fff;
+        cursor: pointer;
+        transition: background-color 0.1s ease-out, color 0.1s ease-out;
+
+        &:hover {
+            background-color: $color-cta;
+            color: #fff;
+
+            &::after {
+                color: #fff;
+            }
+        }
+    }
+}

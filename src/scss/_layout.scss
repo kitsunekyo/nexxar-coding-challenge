@@ -24,32 +24,7 @@
     }
 }
 
-.footer {
-    margin-top: auto;
-    display: flex;
-    padding: 1rem;
 
-    &__social {
-        margin-left: auto;
-        display: flex;
-        align-items: center;
-
-        &-icon {
-            width: 30px;
-            height: 30px;
-            background-color: $color-k3;
-            line-height: 1;
-            color: #fff;
-            border-radius: 50%;
-            display: grid;
-            place-content: center;
-
-            &:not(:last-child) {
-                margin-right: 0.5rem;
-            }
-        }
-    }
-}
 
 section[class*="section"]:not(:last-child) {
     margin-bottom: 2rem;
@@ -64,7 +39,7 @@ section[class*="section"]:not(:last-child) {
 
 .flex-section {
     > *:not(:last-child) {
-        margin-bottom: 1rem;
+        margin-bottom: 3rem;
     }
 
     @media (min-width: 768px) {
@@ -78,42 +53,16 @@ section[class*="section"]:not(:last-child) {
     }
 }
 
-.quote {
-    &__icon {
-        fill: $color-cta;
-        max-width: 40px;
-        height: auto;
-    }
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+}
 
-    blockquote {
-        font-size: 1.75rem;
-        color: $color-k2;
-
-        &:not(:last-child) {
-            margin-bottom: 2rem;
-        }
-    }
-    figcaption {
-        > span {
-            display: inline-block;
-            font-weight: 700;
-            position: relative;
-            line-height: 1;
-
-            &::after {
-                content: "";
-                display: inline-block;
-                height: 2px;
-                width: 100%;
-                background: $color-k1;
-                line-height: 1;
-            }
-        }
-
-        > cite {
-            display: block;
-            text-decoration: none;
-            font-style: normal;
-        }
-    }
+.drawer--open .overlay {
+    display: block;
 }

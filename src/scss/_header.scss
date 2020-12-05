@@ -1,0 +1,98 @@
+.header {
+    position: relative;
+    z-index: 1000;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+    transition: background-color 0.1s ease-out;
+
+    &__row {
+        height: 60px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    &__logo {
+        width: 89px;
+        height: auto;
+        flex-shrink: 0;
+    }
+
+    &__title {
+        flex-grow: 1;
+        text-align: center;
+        margin-right: 1rem;
+        font-weight: 700;
+    }
+}
+
+.drawer--open .header {
+    background-color: $color-k5;
+}
+
+.nav-button {
+    position: relative;
+    padding: 0;
+    height: 19px;
+    width: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+
+    > span {
+        display: block;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: top 0.1s ease-out;
+
+        &,
+        &::before,
+        &::after {
+            position: absolute;
+            width: 27px;
+            height: 3px;
+            background-color: $color-k4;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            display: block;
+        }
+
+        &::before {
+            top: -8px;
+        }
+
+        &::after {
+            bottom: -8px;
+        }
+    }
+}
+
+.drawer--open .nav-button {
+    span,
+    span::before,
+    span::after {
+        width: 17px;
+        background-color: $color-k1;
+        top: auto;
+        bottom: auto;
+    }
+}
+
+.drawer {
+    width: 100%;
+    padding: 0 15px 15px 15px;
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: $color-k5;
+}
+
+.drawer--open .drawer {
+    display: block;
+}
