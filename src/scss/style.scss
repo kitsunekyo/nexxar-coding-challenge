@@ -3,8 +3,7 @@
 @import "./layout";
 @import "./footer";
 @import "./header";
-@import "./list";
-@import "./menu";
+@import './components/all';
 
 * {
     -webkit-font-smoothing: antialiased;
@@ -58,6 +57,26 @@ a {
     &__caption {
         font-weight: 600;
     }
+
+    &__legend {
+        margin: 1rem 0;
+
+        &-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: .5rem;
+        }
+        &-color {
+            width: 20px;
+            height: 20px;
+            background: $color-k5;
+            margin-right: .5rem;
+        }
+
+        &-label {
+            font-weight: 600;
+        }
+    }
 }
 
 .quote {
@@ -70,6 +89,7 @@ a {
     blockquote {
         font-size: 1.75rem;
         color: $color-k2;
+        font-weight: 300;
 
         &:not(:last-child) {
             margin-bottom: 2rem;

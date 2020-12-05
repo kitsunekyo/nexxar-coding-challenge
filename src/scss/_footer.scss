@@ -2,9 +2,13 @@
     margin-top: auto;
     display: flex;
     padding: 1rem;
+    justify-content: center;
+
+    &__brand {
+        display: none;
+    }
 
     &__social {
-        margin-left: auto;
         display: flex;
         align-items: center;
 
@@ -19,7 +23,11 @@
             place-content: center;
 
             &:not(:last-child) {
-                margin-right: 0.5rem;
+                margin-right: .75rem;
+            }
+
+            > svg {
+                height: 18px;
             }
         }
     }
