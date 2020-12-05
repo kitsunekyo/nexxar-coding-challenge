@@ -1,0 +1,24 @@
+{
+    "name": "nexxar",
+    "version": "1.0.0",
+    "description": "Dear applicant, welcome to the nexxar challenge!",
+    "main": "index.js",
+    "scripts": {
+        "scss": "node-sass src/scss/style.scss -o dist",
+        "start": "npm run scss && node-sass src/scss/style.scss -wo dist"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "eslint": "^7.14.0",
+        "eslint-config-prettier": "^6.15.0",
+        "node-sass": "^5.0.0",
+        "prettier": "^2.2.0",
+        "stylelint": "^13.8.0",
+        "stylelint-config-prettier": "^8.0.2",
+        "stylelint-config-sass-guidelines": "^7.1.0",
+        "stylelint-config-standard": "^20.0.0",
+        "stylelint-scss": "^3.18.0"
+    },
+    "dependencies": {}
+}
