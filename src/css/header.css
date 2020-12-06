@@ -48,11 +48,15 @@
     }
 
     &__menu {
-        display: flex;
+        display: none;
         flex-direction: row;
         align-self: flex-end;
         margin: 0 0 0 auto;
         font-weight: 600;
+
+        @media (min-width: $breakpoint-lg) {
+            display: flex;
+        }
         
         &-item {
             margin: 0 1rem;
