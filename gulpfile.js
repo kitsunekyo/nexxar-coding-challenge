@@ -10,6 +10,10 @@ function styles() {
     return src("./src/css/style.css")
         .pipe(sourcemaps.init())
         .pipe(postcss([require("precss"), require("autoprefixer")]))
+        .on("error", function (e) {
+            console.log(e.toString());
+            this.emit("end");
+        })
         .pipe(sourcemaps.write("."))
         .pipe(dest(output))
         .pipe(browserSync.stream());
