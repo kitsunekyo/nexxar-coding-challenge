@@ -5,7 +5,7 @@
     padding: 0 $space;
     margin: 0 auto;
 
-    @media (min-width: 768px) {
+    @media (min-width: $breakpoint-md) {
         padding: 0 $space-tablet;
     }
 }
@@ -19,11 +19,11 @@
     margin-bottom: 1rem;
     line-height: 1;
 
-    @media (min-width: 768px) {
+    @media (min-width: $breakpoint-md) {
         margin-top: 60px;
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: $breakpoint-md) {
         margin-top: 70px;
     }
 }
@@ -38,7 +38,7 @@ section[class*="section"]:not(:last-child) {
     color: $color-k2;
     font-weight: 300;
 
-    @media (min-width: 768px) {
+    @media (min-width: $breakpoint-md) {
         font-size: 1.5rem;
     }
 }
@@ -48,7 +48,7 @@ section[class*="section"]:not(:last-child) {
         margin-bottom: 3rem;
     }
 
-    @media (min-width: 1080px) {
+    @media (min-width: $breakpoint-lg) {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: $space;

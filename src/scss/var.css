@@ -9,3 +9,6 @@ $color-k6: #eee;
 
 $space: 1rem;
 $space-tablet: 4rem;
+
+$breakpoint-md: 480px;
+$breakpoint-lg: 1280px;

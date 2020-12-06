@@ -9,7 +9,7 @@
     transition: background-color 0.1s ease-out;
     padding: 0 $space;
 
-    @media (min-width: 768px) {
+    @media (min-width: $breakpoint-md) {
         padding: 0 $space-tablet;
     }
 
