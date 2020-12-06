@@ -5,11 +5,9 @@ const browserSync = require("browser-sync").create();
 const sourcemaps = require("gulp-sourcemaps");
 
 const output = path.resolve(__dirname, "public/dist");
-// const mode = process.env.NODE_ENV;
-// .pipe(sass({ outputStyle: mode === "production" ? "compressed" : "expanded" }).on("error", sass.logError))
 
-function scss() {
-    return src("./src/scss/style.css")
+function styles() {
+    return src("./src/css/style.css")
         .pipe(sourcemaps.init())
         .pipe(postcss([require("precss"), require("autoprefixer")]))
         .pipe(sourcemaps.write("."))
@@ -21,9 +19,9 @@ function javascript() {
     return src("./src/*.js").pipe(dest(output)).pipe(browserSync.stream());
 }
 
-function watchScss() {
-    scss();
-    return watch("./src/**/*.scss", scss);
+function watchStyles() {
+    styles();
+    return watch("./src/**/*.css", styles);
 }
 
 function watchJavascript() {
@@ -43,12 +41,12 @@ function dev(cb) {
     });
 
     watchJavascript();
-    watchScss();
+    watchStyles();
     watchHtml();
 
     cb();
 }
 
-exports.default = parallel(javascript, scss);
-exports.build = parallel(javascript, scss);
+exports.default = parallel(javascript, styles);
+exports.build = parallel(javascript, styles);
 exports.dev = dev;
