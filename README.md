@@ -16,3 +16,8 @@ If you have any questions please email tl@nexxar.com or gw@nexxar.com.
 
 Run `npm start` to develop locally.    
 Run `npm run build` to build the solution.
+
+## Deploy
+The master branch is automatically deployed to netlify.
+
+[https://pensive-yonath-490288.netlify.app/](https://pensive-yonath-490288.netlify.app/)
