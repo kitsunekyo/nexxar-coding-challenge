@@ -7,7 +7,7 @@
     left: 0;
     background-color: $color-k5;
 
-    @media (min-width: 768px) {
+    @media (min-width: $breakpoint-md) {
         padding: 0 4rem 1rem;
     }
 }
