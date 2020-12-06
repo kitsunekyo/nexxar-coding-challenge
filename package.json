@@ -18,7 +18,6 @@
         "gulp-postcss": "^9.0.0",
         "gulp-sourcemaps": "^3.0.0",
         "postcss": "^8.1.14",
-        "postcss-import": "^13.0.0",
         "precss": "^4.0.0",
         "prettier": "^2.2.0",
         "stylelint": "^13.8.0",
