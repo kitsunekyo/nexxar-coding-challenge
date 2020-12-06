@@ -22,6 +22,10 @@
     justify-content: center;
     background: transparent;
 
+    @media (min-width: $breakpoint-lg) {
+        display: none;
+    }
+
     > span {
         display: block;
         top: 50%;
