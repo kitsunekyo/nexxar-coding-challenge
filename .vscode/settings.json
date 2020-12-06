@@ -1,9 +1,4 @@
 {
-    "stylelint.validate": [
-        "css",
-        "html",
-        "postcss",
-        "sass",
-        "scss",
-    ]
+    "stylelint.validate": ["css", "html", "postcss", "sass", "scss"],
+    "editor.formatOnSave": true
 }
