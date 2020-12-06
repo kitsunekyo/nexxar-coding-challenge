@@ -1,8 +1,8 @@
-# nexxar coding test
+# ___ coding test
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/da0b1113-f1d2-4028-9948-24551921f855/deploy-status)](https://app.netlify.com/sites/pensive-yonath-490288/deploys)
 
-Dear applicant, welcome to the nexxar challenge!
+Dear applicant, welcome to the ___ challenge!
 
 We created this challenge to get a small insight of your coding skills.
 Please build a static website, according to the screens you find in the design folder.
@@ -12,7 +12,6 @@ Please build a static website, according to the screens you find in the design f
 - please use BEM or other naming conventions 
 
 Send us your finished work as a package by email.
-If you have any questions please email tl@nexxar.com or gw@nexxar.com.
 
 ## Usage
 
