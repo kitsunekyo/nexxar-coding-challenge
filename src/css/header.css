@@ -21,9 +21,13 @@
     }
 
     &__logo {
-        width: 89px;
-        height: auto;
+        width: auto;
+        height: 20px;
         flex-shrink: 0;
+
+        @media (min-width: $breakpoint-md) {
+            height: 30px;
+        }
     }
 
     &__title {
