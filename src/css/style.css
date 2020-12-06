@@ -70,6 +70,7 @@ h4.title {
 
     &__legend {
         margin: 1rem 0;
+        line-height: 1;
 
         &-item {
             display: flex;
@@ -81,6 +82,7 @@ h4.title {
             height: 20px;
             background: $color-k5;
             margin-right: 0.5rem;
+            flex-shrink: 0;
         }
 
         &-label {
