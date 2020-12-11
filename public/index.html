@@ -6,7 +6,7 @@
         <title>nexxar</title>
         <link rel="stylesheet" href="dist/style.css" />
     </head>
-    <body>
+    <body class="drawer--open">
         <header class="header">
             <div class="header__row">
                 <img src="assets/logo.svg" alt="nexxar-logo" class="header__logo" />
@@ -14,33 +14,64 @@
                 <button class="nav-button">
                     <span></span>
                 </button>
-                <div class="header__menu">
-                    <a class="header__menu-item">To Our Shareholders</a>
-                    <a class="header__menu-item header__menu-item--active">Management Report</a>
-                    <a class="header__menu-item">Corporate Governance</a>
-                    <a class="header__menu-item">Financial Statements</a>
-                </div>
             </div>
             <div class="drawer">
-                <div class="menu">
-                    <div class="list">
-                        <a class="list-item" data-menu-target="secondary">To Our Shareholders</a>
-                        <a class="list-item" data-menu-target="secondary">Management Report</a>
-                        <a class="list-item" href="#">Corporate Governance</a>
-                        <a class="list-item" href="https://www.google.at">Financial Statements</a>
-                    </div>
-                </div>
-                <div class="menu--secondary">
-                    <div class="list">
-                        <a class="list-item" data-menu-target="main">Primary Menu</a>
-                        <div class="list-item menu-title">aManagement Report</div>
-                        <a class="list-item">aCorporate Governance</a>
-                        <a class="list-item">aFinancial Statements</a>
-                        <a class="list-item">aFinancial Statements</a>
-                        <a class="list-item">aFinancial Statements</a>
-                        <a class="list-item">aFinancial Statements</a>
-                    </div>
-                </div>
+                <a class="drawer-breadcrumbs">Primary Menu</a>
+                <nav class="menu">
+                    <ul class="menu-primary">
+                        <li class="menu-item">
+                            <ul class="menu-secondary">
+                                <li class="menu-item">
+                                    <a href="#">sub link 1</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#">sub link 2</a>
+                                </li>
+                            </ul>
+                            <a href="#">To Our Shareholders</a>
+                        </li>
+                        <li class="menu-item menu-item--active">
+                            <ul class="menu-secondary menu-secondary--open">
+                                <li class="menu-item">
+                                    <a href="#">Chairman's letter</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#">CEO's letter</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#">Our corporate governance approach</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#">Our Board of Directors</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#">Our Executive Committee</a>
+                                </li>
+                                <li class="menu-item menu-item--active">
+                                    <a href="#">Compensation Report summary</a>
+                                </li>
+                            </ul>
+                            <a href="#">Management Report</a>
+                        </li>
+                        <li class="menu-item">
+                            <ul class="menu-secondary">
+                                <li class="menu-item">
+                                    <a href="#">sub link c1</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#">sub link c2</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#">sub link c3</a>
+                                </li>
+                            </ul>
+                            <a href="#">Finanical Statements</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#">Corporate Governance</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </header>
 

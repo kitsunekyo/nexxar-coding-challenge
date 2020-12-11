@@ -1,15 +1,10 @@
 (function () {
-    document.addEventListener("DOMContentLoaded", () => {
-        drawer();
-        menu();
-    });
-
-    const drawer = () => {
+    const drawer = (() => {
         let isOpen = false;
         let backupHeaderText = "";
 
-        const $body = document.querySelector("body");
-        const $headerTitleEl = document.querySelector(".header__title");
+        let $body = null;
+        let $headerTitleEl = null;
 
         const toggle = () => {
             if (!isOpen) {
@@ -19,39 +14,71 @@
             $body.classList.toggle("drawer--open");
             $headerTitleEl.innerHTML = isOpen ? "Menu" : backupHeaderText;
         };
-        document.querySelector('.overlay').addEventListener('click', toggle);
-        document.querySelector(".nav-button").addEventListener("click", toggle);
-    };
 
-    const menu = () => {
-        let activeMenu = "main";
-        const $mainMenuEl = document.querySelector(".menu");
-        const $secondaryMenuEl = document.querySelector(".menu--secondary");
+        document.addEventListener("DOMContentLoaded", () => {
+            $body = document.querySelector("body");
+            $headerTitleEl = document.querySelector(".header__title");
 
-        const handleNavItemClick = (e) => {
-            e.preventDefault();
-            navigate(e.target.dataset.menuTarget);
-        };
-
-        const navigate = (target) => {
-            activeMenu = target;
-
-            switch (activeMenu) {
-                case "main":
-                    $mainMenuEl.style.display = "block";
-                    $secondaryMenuEl.style.display = "none";
-                    break;
-                case "secondary":
-                    $mainMenuEl.style.display = "none";
-                    $secondaryMenuEl.style.display = "block";
-                    break;
-                default:
-                    break;
-            }
-        };
-
-        document.querySelectorAll("[data-menu-target]").forEach((el) => {
-            el.addEventListener("click", handleNavItemClick);
+            document.querySelector(".overlay").addEventListener("click", toggle);
+            document.querySelector(".nav-button").addEventListener("click", toggle);
         });
-    };
+    })();
+
+    const menu = (() => {
+        const menuSelector = ".menu";
+        const primaryMenuSelector = ".menu-primary";
+        const submenuSelector = ".menu-secondary";
+        const backButtonSelector = ".drawer-breadcrumbs";
+        const openClass = "menu-secondary--open";
+
+        let $menu = null;
+        let $primaryMenu = null;
+        let $menuItemLinks = null;
+        let $backButton = null;
+        let menuHeight = null;
+
+        const closeSubmenus = () => {
+            $menuItemLinks.forEach((el) => {
+                const $submenu = el.parentElement.querySelector(submenuSelector);
+                $submenu.classList.remove(openClass);
+            });
+        };
+
+        const back = (e) => {
+            e.preventDefault();
+
+            $primaryMenu.style.transform = "translate(0)";
+            closeSubmenus();
+            $backButton.style.display = "none";
+            $menu.style.height = `${menuHeight}px`;
+        };
+
+        const handleSubmenuOpen = (e) => {
+            e.preventDefault();
+
+            closeSubmenus();
+
+            $backButton.style.display = "block";
+            $primaryMenu.style.transform = "translate(-100%)";
+            const $submenu = e.target.parentElement.querySelector(submenuSelector);
+            $submenu.classList.add(openClass);
+            $menu.style.height = `${$submenu.offsetHeight}px`;
+        };
+
+        document.addEventListener("DOMContentLoaded", () => {
+            $primaryMenu = document.querySelector(primaryMenuSelector);
+            $menu = document.querySelector(menuSelector);
+            $menuItemLinks = document.querySelectorAll(`${submenuSelector} + a`);
+            $backButton = document.querySelector(backButtonSelector);
+
+            menuHeight = $menu.offsetHeight;
+            $menu.style.height = `${menuHeight}px`;
+
+            $backButton.addEventListener("click", back);
+
+            $menuItemLinks.forEach((el) => {
+                el.addEventListener("click", handleSubmenuOpen);
+            });
+        });
+    })();
 })();
