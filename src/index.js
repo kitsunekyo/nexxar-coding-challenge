@@ -22,6 +22,11 @@
             document.querySelector(".overlay").addEventListener("click", toggle);
             document.querySelector(".nav-button").addEventListener("click", toggle);
         });
+
+        return {
+            isOpen: () => isOpen,
+            toggle,
+        };
     })();
 
     const menu = (() => {
@@ -37,26 +42,26 @@
         let $backButton = null;
         let menuHeight = null;
 
-        const closeSubmenus = () => {
+        const resetSubmenus = () => {
             $menuItemLinks.forEach((el) => {
                 const $submenu = el.parentElement.querySelector(submenuSelector);
                 $submenu.classList.remove(openClass);
             });
         };
 
-        const back = (e) => {
+        const openMainMenu = (e) => {
             e.preventDefault();
 
             $primaryMenu.style.transform = "translate(0)";
-            closeSubmenus();
+            resetSubmenus();
             $backButton.style.display = "none";
             $menu.style.height = `${menuHeight}px`;
         };
 
-        const handleSubmenuOpen = (e) => {
+        const openSubmenu = (e) => {
             e.preventDefault();
 
-            closeSubmenus();
+            resetSubmenus();
 
             $backButton.style.display = "block";
             $primaryMenu.style.transform = "translate(-100%)";
@@ -65,20 +70,31 @@
             $menu.style.height = `${$submenu.offsetHeight}px`;
         };
 
+        const setMenuBaseSize = () => {
+            document.querySelector("body").classList.add("drawer--open");
+            menuHeight = $menu.offsetHeight;
+            $menu.style.height = `${menuHeight}px`;
+            document.querySelector("body").classList.remove("drawer--open");
+        };
+
         document.addEventListener("DOMContentLoaded", () => {
             $primaryMenu = document.querySelector(primaryMenuSelector);
             $menu = document.querySelector(menuSelector);
             $menuItemLinks = document.querySelectorAll(`${submenuSelector} + a`);
             $backButton = document.querySelector(backButtonSelector);
 
-            menuHeight = $menu.offsetHeight;
-            $menu.style.height = `${menuHeight}px`;
+            setMenuBaseSize();
 
-            $backButton.addEventListener("click", back);
+            $backButton.addEventListener("click", openMainMenu);
 
             $menuItemLinks.forEach((el) => {
-                el.addEventListener("click", handleSubmenuOpen);
+                el.addEventListener("click", openSubmenu);
             });
         });
+
+        return {
+            closeSubmenus: resetSubmenus,
+            back: openMainMenu,
+        };
     })();
 })();
